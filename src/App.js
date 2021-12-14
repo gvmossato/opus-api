@@ -148,7 +148,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://127.0.0.1:8000/api/v1/appsite/')
+    fetch('https://devopus.herokuapp.com/api/v1/appsite/')
       .then((response) => response.json())
       .then((result) => this.setState({ list: result }))
       .catch((error) => error);
