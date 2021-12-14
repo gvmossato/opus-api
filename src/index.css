@@ -1,14 +1,187 @@
+:root {
+  /* Paleta Opus */
+  --color-blue1: #048ABF;
+  --color-blue2: #04BFBF;
+  --color-blue3: #04BF9D;
+  --color-pink1: #F20574;
+  --color-pink2: #F26398;
+  --color-yellow1: #F2CB05;
+  --color-yellow2: #F2AC29;
+
+  --color-blue-support: #00B1FF;
+
+  /* Escala de cinza */
+  --color-white2: #eeeeee;
+  --color-white3: #dfdfdf;
+  --color-white4: #c2c2c2;
+  --color-body: #707070;    
+
+  /* Gradientes */
+  --gradient-b1b2: linear-gradient(90deg, var(--color-blue1)   0%, var(--color-blue2)   100%);
+  --gradient-b2b3: linear-gradient(90deg, var(--color-blue2)   0%, var(--color-blue3)   100%);
+  --gradient-p1p2: linear-gradient(90deg, var(--color-pink1)   0%, var(--color-pink2)   100%);
+  --gradient-y1y2: linear-gradient(90deg, var(--color-yellow1) 0%, var(--color-yellow2) 100%);
+  --gradient-p1y1: linear-gradient(90deg, var(--color-pink1)   0%, var(--color-yellow1) 100%);
+  --gradient-p2y2: linear-gradient(90deg, var(--color-pink2)   0%, var(--color-yellow2)   100%);
+  --gradient-y1p1: linear-gradient(90deg, var(--color-yellow1)   0%, var(--color-pink1)   100%);
+
+  /* Dimensões de referência */
+  --default-border-radius: 25px; /* Ou metade desse valor */
+  --profile-header-height: 8vw;  /* Para alinhamento */
+  --list-card-height: 6vw;       /* Para alinhamento */
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  font-family: Comfortaa, Arial, monospace;  
+  background-image: url(/src/abstract.png);
+  color: var(--color-body);
+  font-weight: 600;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h2 {
+  font-size: 40pt;
+  margin: 0 auto;
+  color: white;
+}
+
+p {
+  color: white;
+  text-align: center;
+}
+
+.search {
+  text-align: left;
+  margin-left: 3vw;
+}
+
+form {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input{
+  border-radius: 5000px;
+  border: transparent;
+  margin-top: 3px;
+  padding: 0.2vw;
+  text-indent: 2px;
+}
+
+
+/* ======= */
+/* Button */
+/* ======= */
+
+button {
+  font-family: Comfortaa, Arial, monospace;
+  font-size: 12pt;
+  cursor: pointer;
+  font-weight: 700;
+  border: none;
+  background-color: rgba(0, 119, 255, 0.822);
+}
+
+.gradient-button {
+  font-size: clamp(8pt, 1.5vw, 12pt);
+  width: 60%;
+  border-radius: 100vw;
+  padding: clamp(10px, 0.5vw, 15px);
+  border: solid 2px transparent;
+  background-image: linear-gradient(transparent, transparent), var(--gradient-y1p1);
+  background-origin: border-box;
+  box-shadow: 1000px 1000px 0 #FFFFFF inset;
+}
+
+.gradient-button:hover {
+  background-image: linear-gradient(transparent, transparent), var(--gradient-y1y2);
+  box-shadow: none;
+  color: white;
+}
+
+.primary-button {
+  box-shadow: none;
+  color: white;
+}
+
+/* ======= */
+/* Table */
+/* ======= */
+
+table {
+  font-family: Comfortaa, Arial, monospace;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  margin: 0 auto;
+  width: 95%;
+  table-layout: auto;
+  color: black
+}
+
+th {
+  text-align: center;
+  padding: 0.8vw;
+  /* border-radius: 100px; */
+  display: fixed;
+}
+
+td {
+  text-align: center;
+  background-color: var(--color-white2);
+  /* border-radius: 100px; */
+}
+
+th:nth-child(odd) {
+  background-image: linear-gradient(transparent, transparent), var(--gradient-b1b2);
+  color: white 
+}
+
+th:nth-child(even) {
+  background-image: linear-gradient(transparent, transparent), var(--gradient-b1b2);
+  color: white
+}
+
+th:nth-child(9) {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px
+}
+
+th:nth-child(1) {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+
+td:nth-child(even) {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+td:nth-child(9) {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px 
+}
+
+td:nth-child(1) {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px
+}
+
+td:nth-child(10) {
+  background-color: transparent; 
+  border-color: transparent;
+}
+
+td:nth-child(9) {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px 
 }
